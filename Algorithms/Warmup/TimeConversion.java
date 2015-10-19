@@ -4,7 +4,7 @@
  * - In this problem, I am given time in AM/PM format. Convert this into a
  *   24-hour format.
  * - Input: Time in the AM/PM format i.e. hh:mm:ssAM or hh:mm:ssPM where 
- *          01≤hh≤12 
+ *          01≤hh≤12
  *          00≤mm≤59 
  *          00≤ss≤59
  * - Output: The time in 24 hour format i.e. hh:mm:ss where 
