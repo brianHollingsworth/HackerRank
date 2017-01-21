@@ -9,8 +9,8 @@
 #                required. Do not leave any leading or trailing spaces. Your
 #                answer may look like: 5.5
 #
-# Referenced https://www.easycalculation.com/statistics/learn-regression.php
-# to understand linear regression formula and to create readable code.
+# Referenced https://www.easycalculation.com/statistics/learn-regression.php to
+# better understand linear regression formula and to create readable code.
 
 #import math
 from __future__ import division
