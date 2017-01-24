@@ -21,19 +21,20 @@ y = [10, 25, 17, 11, 13, 17, 20, 13, 9, 15]
 
 n = len(x)
 
-xySum = xSquaredSum = 0
+xy_sum = x_squared_sum = 0
 for i in range(n):
-    xySum += x[i] * y[i]
-    xSquaredSum += x[i]**2
+    xy_sum += x[i] * y[i]
+    x_squared_sum += x[i]**2
 
 # a = The intercept point of the regression line and the y-axis.
 # b = The slope of the regression line.
-a = (sum(y) * (xSquaredSum) - sum(x) * xySum) / (n * xSquaredSum - sum(x)**2)
-b = ((n * xySum - sum(x)*sum(y))/(n * xSquaredSum - sum(x)**2))
+a = (sum(y) * (x_squared_sum) - sum(x) * xy_sum) / (n * x_squared_sum -
+    sum(x)**2)
+b = ((n * xy_sum - sum(x)*sum(y))/(n * x_squared_sum - sum(x)**2))
 
 # y' = bx + a
 # Since we're making a prediction when the student's History score is 10, we set
 # 'x' = 10
-yHat = (b*10) + a
+y_hat = (b*10) + a
 
-print('%.1f' % yHat)
+print('%.1f' % y_hat)

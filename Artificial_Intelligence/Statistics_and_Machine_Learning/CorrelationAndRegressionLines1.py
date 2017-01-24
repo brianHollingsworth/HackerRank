@@ -18,17 +18,18 @@ import math
 x = [15, 12, 8, 8, 7, 7, 7, 6, 5, 3]
 y = [10, 25, 17, 11, 13, 17, 20, 13, 9, 15]
 
-xSum = sum(x)
-ySum = sum(y)
+x_sum = sum(x)
+y_sum = sum(y)
 
 n = len(x)
 
-xySum = xSquaredSum = ySquaredSum = 0
+xy_sum = x_squared_sum = y_squared_sum = 0
 for i in range(n):
-    xySum += x[i] * y[i]
-    xSquaredSum += x[i]**2
-    ySquaredSum += y[i]**2
+    xy_sum += x[i] * y[i]
+    x_squared_sum += x[i]**2
+    y_squared_sum += y[i]**2
 
-r = (xySum - ((xSum) * (ySum) / n)) / (math.sqrt((xSquaredSum - ((xSum**2) / n)) * (ySquaredSum - ((ySum**2) / n))))
+r = (xy_sum - ((x_sum) * (y_sum) / n)) / (math.sqrt((x_squared_sum - ((x_sum**2)
+/ n)) * (y_squared_sum - ((y_sum**2) / n))))
 
 print('%.3f' % r)

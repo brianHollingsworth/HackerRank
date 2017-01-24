@@ -20,8 +20,8 @@
 
 import sys
 
-pixelCount = 0
-brightnessSum = 0
+pixel_count = 0
+brightness_sum = 0
 
 # For each line of pixel tuples...
 for line in sys.stdin:
@@ -37,16 +37,16 @@ for line in sys.stdin:
         # Because pixels are scaled on a 0-255 brightness scale, we want to find
         # how bright our pixels are. We will take the brightest RGB value and
         # add it to our pixel brightness sum.
-        maxBrightness = max(r,g,b)
-        brightnessSum += maxBrightness
-        pixelCount += 1
+        max_brightness = max(r,g,b)
+        brightness_sum += max_brightness
+        pixel_count += 1
 
 # Now that we have our pixel brightness sum, we can divide it by the total
 # number of pixels to find the average brightness and determine if the picture
 # is being clicked in the daytime or at night.
 # *** This took some tinkering to satisfy all 25 test cases, but a threshold of
 #     of 100 was the first solid value that satisfied all cases.
-if float(brightnessSum) / pixelCount > 100:
+if float(brightness_sum) / pixel_count > 100:
     print "day"
 else:
     print "night"

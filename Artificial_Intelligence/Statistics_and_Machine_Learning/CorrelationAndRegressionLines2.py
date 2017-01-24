@@ -20,25 +20,25 @@ from __future__ import division
 x = [15, 12, 8, 8, 7, 7, 7, 6, 5, 3]
 y = [10, 25, 17, 11, 13, 17, 20, 13, 9, 15]
 
-xMean = sum(x) / len(x)
-yMean = sum(y) / len(y)
+x_mean = sum(x) / len(x)
+y_mean = sum(y) / len(y)
 
 n = len(x)
 
-xySum = xyMean = 0
+xy_sum = xy_mean = 0
 for i in range(n):
-    xySum += x[i] * y[i]
+    xy_sum += x[i] * y[i]
 
-xyMean = xySum / n
+xy_mean = xy_sum / n
 
-xMeanSquared = xMean**2
+x_mean_squared = x_mean**2
 
-xSquares = meanOfXSquares = 0
+x_squares = mean_of_x_squares = 0
 for i in range(n):
-    xSquares += x[i]**2
+    x_squares += x[i]**2
 
-meanOfXSquares = xSquares / n
+mean_of_x_squares = x_squares / n
 
-slope = (xyMean - ((xMean) * (yMean))) / (meanOfXSquares - (xMean**2))
+slope = (xy_mean - ((x_mean) * (y_mean))) / (mean_of_x_squares - (x_mean**2))
 
 print('%.3f' % slope)

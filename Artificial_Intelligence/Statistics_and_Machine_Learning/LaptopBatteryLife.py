@@ -17,11 +17,11 @@ import sys
 
 # The amount of time the laptop was charged will be our 'x' variable.
 # The amount of time the battery lasted will our 'y' variable.
-chargeTime = []
-batteryTime = []
+charge_time = []
+battery_time = []
 
-trainingData = open('trainingdata.txt')
-for line in trainingData:
+training_data = open('trainingdata.txt')
+for line in training_data:
     x, y = map(float, line.split(','))
 
     # I plugged in "trainingdata.txt" as a CSV into Numbers (see
@@ -32,23 +32,23 @@ for line in trainingData:
     # time over 4.00 hours will produce a battery time over 8.00. We will only
     # read in data points where the charge time was less than four hours.
     if (x < 4):
-        chargeTime.append(x)
-        batteryTime.append(y)
+        charge_time.append(x)
+        battery_time.append(y)
 
-trainingData.close()
+training_data.close()
 
 n = len(chargeTime)
-averageChargeTime = sum(chargeTime) / n
-averageBatteryTime = sum(batteryTime) / n
+average_charge_time = sum(charge_time) / n
+average_battery_time = sum(battery_time) / n
 
-expectedValue = N = 0
+expected_value = N = 0
 for i in xrange(n):
-    xiMinusXBar = chargeTime[i] - averageChargeTime
-    expectedValue += xiMinusXBar * (batteryTime[i] - averageBatteryTime)
-    N += xiMinusXBar**2
+    xi_minus_xbar = charge_time[i] - average_charge_time
+    expected_value += xi_minus_xbar * (battery_time[i] - average_battery_time)
+    N += xi_minus_xbar**2
 
-b = (1.0 * expectedValue) / N
-a = averageBatteryTime - b * averageChargeTime
+b = (1.0 * expected_value) / N
+a = average_battery_time - b * average_charge_time
 
 # Now that we have figured out our method of least squares, we can now quantify
 # what we mean by “best fit”. We will analyze a provided input, x, that
