@@ -8,5 +8,5 @@
 -- * * * * *
 -- Write a query to print the pattern P(20).
 
-SELECT rpad('* ',LEVEL*2,'* ')
-FROM dual CONNECT BY LEVEL <=20;
+SELECT RPAD('*',LEVEL*2,' *')
+FROM DUAL CONNECT BY LEVEL <= 20;
